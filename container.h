@@ -91,3 +91,19 @@ public:
 	int put(int y, int i);
 	int get(int* y, int* i);
 };
+
+typedef struct d2_prqueue_type {
+	int size;
+	int tail;
+	int* body;
+	int* index;
+}d2_prqueue_;
+
+void d2_prqueue_constructor(d2_prqueue_* this_,int s);
+void d2_prqueue_deconstructor(d2_prqueue_* this_);
+void d2_prqueue_make2_heap(d2_prqueue_* this_,int broad);
+void d2_prqueue_remake2_heap(d2_prqueue_* this_,int broad);
+int d2_prqueue_put2_check(d2_prqueue_* this_);
+int d2_prqueue_get2_check(d2_prqueue_* this_);
+int d2_prqueue_put(d2_prqueue_* this_,int y,int i);
+int d2_prqueue_get(d2_prqueue_* this_,int* y,int* i);

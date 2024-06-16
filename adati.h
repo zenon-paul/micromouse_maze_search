@@ -1,8 +1,14 @@
 #pragma once
-#include"parameter.h"
+/*#include"parameter.h"
 #include"grid.h"
 #include"container.h"
 #include<vector>
+typedef struct adati_type {
+	Grid_* user;
+	uint8_t start_index;
+	uint8_t goal_index;
+
+}Adati_;
 
 class Adati {
 private:
@@ -10,15 +16,15 @@ private:
 	std::vector<int> path;
 	std::vector<int> dist;
 	d_stack property;
-	int direction[4][2];
+	int direction[4][2];////////////////
 	int start_index;//開始マス
 	int goal_index;//ゴールマス
 
 	int parent_index;
 
-	void from_index_to_coordinate(int i, int* x, int* y);
-	void from_index_to_index(int index_from, int dx, int dy, int* to_index);
-	void from_coordinate_to_index(int x, int y, int* i);
+	void from_index_to_coordinate(int i, int* x, int* y);//////////////////
+	void from_index_to_index(int index_from, int dx, int dy, int* to_index);/////////
+	void from_coordinate_to_index(int x, int y, int* i);///////////
 
 	int shortcut_judge(int index);
 
@@ -30,4 +36,4 @@ public:
 	vector<int> step_back2(int index1, int index2);
 	vector<int> get_adati_path();
 
-};
+};*/

@@ -1,4 +1,4 @@
-#include"search.h"
+/*#include"search.h"
 #include"grid.h"
 #include<stdio.h>
 #include<stdlib.h>
@@ -188,5 +188,5 @@ std::vector<int> Search::get_a_start_path() {
 	}
 	cell_list.push_back(start_index);
 	return cell_list;
-}
+}*/
 

@@ -1,4 +1,4 @@
-#include"grid.h"
+/*#include"grid.h"
 #include"dfs.h"
 
 Dfs::Dfs(Grid* u) :property(BUFF_SIZE), path(WID* HIG, -1){
@@ -152,4 +152,4 @@ vector<int> Dfs::get_adati_path() {//‚±‚Ì•û–@‚¾‚Æ‚¤‚Ü‚­‚¢‚©‚È‚¢
 	}
 	cell_list.push_back(start_index);
 	return cell_list;
-}
+}*/

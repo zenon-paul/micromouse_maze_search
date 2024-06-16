@@ -1,6 +1,18 @@
-#include"adati.h"
+/*#include"adati.h"
 #include"grid.h"
 #include"dijikstr.h"
+void Adati_constructor(Adati_* this_,Grid_* u) {
+	this_->user = u;
+	this_->goal_index = 0;
+	this_->start_index = 0;
+}
+void Adati_adati() {
+
+}
+
+
+
+
 
 Adati::Adati(Grid* u):property(BUFF_SIZE),path(WID* HIG, -1), dist(WID* HIG, INF) {
 	user = u;
@@ -87,18 +99,19 @@ void Adati::adati() {
 		//return;
 	}
 
-	for (int i = 0; i < 4;i++) {
+	for (int i = 0; i < 4;i++) {//個々は壁のないところ以外はwall_seenにしている
 		if (user->get_wall_status(parent_index,i) != WALL_OFF) {
 			user->set_wall_status(parent_index,i,WALL_SEEN);
 			printf("wall\n");
 			
 		}
 	}
+
 	Dijikstr diji(user,goal_index,parent_index);
 	diji.dijikstr();
 	int parent_cost = diji.get_cost(parent_index);
 	for (int i = 0; i < 4;i++) {
-		if (user->get_wall_status(parent_index, i) == WALL_SEEN) {
+		if (user->get_wall_status(parent_index, i) == WALL_SEEN) {//壁があるなら行かない
 			continue;
 		}
 		int child_index = 0;
@@ -163,4 +176,4 @@ vector<int> Adati::get_adati_path() {//この方法だとうまくいかない
 	}
 	cell_list.push_back(start_index);
 	return cell_list;
-}
+}*/

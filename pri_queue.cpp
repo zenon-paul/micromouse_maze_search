@@ -228,3 +228,114 @@ int d2_prqueue::get(int* y, int* i) {
 	remake2_heap(tail - 1);
 	return 1;
 }
+//--------------------------------------------------------
+void d2_prqueue_constructor(d2_prqueue_* this_, int s) {
+	this_->size = s;
+	this_->tail = 0;
+	this_->body = (int*)calloc(s, sizeof(int));
+	this_->index = (int*)calloc(s, sizeof(int));
+}
+void d2_prqueue_deconstructor(d2_prqueue_* this_) {
+	free(this_->body);
+	free(this_->index);
+}
+void d2_prqueue_make2_heap(d2_prqueue_* this_, int broad) {
+	for (int i = broad; i > 0;)
+	{
+		if (chmax(this_->body[i], this_->body[(i - 1) / 2]))
+		{
+			break;
+		}
+		else
+		{
+			swap(&(this_->body[(i - 1) / 2]), &(this_->body[i]));
+			swap(&(this_->index[(i - 1) / 2]), &(this_->index[i]));
+			i = (i - 1) / 2;
+		}
+	}
+}
+void d2_prqueue_remake2_heap(d2_prqueue_* this_, int broad) {
+	for (int i = 0; (2 * i + 1) <= broad;)
+	{
+		if (2 * i + 2 <= broad) {
+			if (chmax(this_->body[2 * i + 1], this_->body[2 * i + 2]))
+			{
+				if (chmax(this_->body[i], this_->body[2 * i + 2]))
+				{
+					swap(&(this_->body[2 * i + 2]), &(this_->body[i]));
+					swap(&(this_->index[2 * i + 2]), &(this_->index[i]));
+					i = 2 * i + 2;
+				}
+				else
+				{
+					break;
+				}
+			}
+			else
+			{
+				if (chmax(this_->body[i], this_->body[2 * i + 1]))
+				{
+					swap(&(this_->body[2 * i + 1]), &(this_->body[i]));
+					swap(&(this_->index[2 * i + 1]), &(this_->index[i]));
+					i = 2 * i + 1;
+				}
+				else
+				{
+					break;
+				}
+
+			}
+		}
+		else
+		{
+			if (chmax(this_->body[i], this_->body[2 * i + 1]))
+			{
+				swap(&(this_->body[2 * i + 1]), &(this_->body[i]));
+				swap(&(this_->index[2 * i + 1]), &(this_->index[i]));
+				i = 2 * i + 1;
+			}
+			else
+			{
+				break;
+			}
+		}
+	}
+}
+int d2_prqueue_put2_check(d2_prqueue_* this_) {
+	if (this_->size <= this_->tail)
+	{
+		return 1;
+	}
+	return 0;
+}
+int d2_prqueue_get2_check(d2_prqueue_* this_) {
+	if (0 >= this_->tail)
+	{
+		return 1;
+	}
+	return 0;
+}
+int d2_prqueue_put(d2_prqueue_* this_, int y, int i) {
+	if (d2_prqueue_put2_check(this_))
+	{
+		return 0;
+	}
+	this_->body[this_->tail] = y;
+	this_->index[this_->tail] = i;
+	this_->tail++;
+	d2_prqueue_make2_heap(this_,this_->tail - 1);
+	return 1;
+}
+int d2_prqueue_get(d2_prqueue_* this_, int* y, int* i) {
+	if (d2_prqueue_get2_check(this_))
+	{
+		return 0;
+	}
+	*y = this_->body[0];
+	*i = this_->index[0];
+	this_->body[0] = this_->body[this_->tail - 1];
+	this_->index[0] = this_->index[this_->tail - 1];
+	this_->tail--;
+	d2_prqueue_remake2_heap(this_,this_->tail - 1);
+	return 1;
+}

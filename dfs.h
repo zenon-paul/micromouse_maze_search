@@ -1,5 +1,5 @@
 #pragma once
-#include"parameter.h"
+/*#include"parameter.h"
 #include"parameter.h"
 #include"grid.h"
 #include"container.h"
@@ -27,4 +27,4 @@ public:
 	void step_back(int index1, int index2);
 	vector<int> step_back2(int index1, int index2);
 	vector<int> get_adati_path();
-};
+};*/

@@ -9,15 +9,16 @@
 #include"search.h"
 #include"adati.h"
 #include"dfs.h"
-
-
-auto* p = new Grid(WID,HIG);
+#include<iostream>
+#include"dijikstr.h"
+/*auto* p = new Grid;
 Adati TT(p);
 Maze test;
 typedef void(Grid::* func)();
 func c = &Grid::geo_cell;
 func w = &Grid::geo_wall;
 std::vector<int> step_back_path(0);
+
 
 //---------------------------------------------------------------------------
 
@@ -66,10 +67,10 @@ void mouse(int button, int state, int x, int y) {
 		//step_back_path = TT.step_back2(p->prev_index,p->current_index);
 
 	}
-}
+}*/
 
 int main(int argc, char** argv) {
-	srand((unsigned int)time(NULL));
+	/*srand((unsigned int)time(NULL));
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE);
 	glutInitWindowSize(640,640);
@@ -78,7 +79,7 @@ int main(int argc, char** argv) {
 	glutReshapeFunc(reshape);
 	glutMouseFunc(mouse);
 	glutIdleFunc(idle);
-	Init();
+	Init();*/
 	
 	
 	//p->suround();
@@ -86,5 +87,20 @@ int main(int argc, char** argv) {
 	//init_for_extending_wall();
 	//by_extending_wall();
 	
-	glutMainLoop();
+	///////glutMainLoop();
+	/*Grid_set_cell_status_xy(&ctest,0,0,3);
+	Grid_set_cell_status_xy(&ctest,15,15,3);
+	Grid_set_cell_status_xy(&ctest, 0, 15, 3);
+	Grid_set_cell_status_xy(&ctest, 15, 0, 3);*/
+	//int x = Grid_set_wall_status_xyd(&ctest,15,2,3,3);
+	//Grid_disp_ver_wall(&ctest);
+	Grid_t ctest;
+	ctest.set_outer_wall();
+	ctest.set_maze("AllJapan_001_1980_classic___16x16.json");
+	printf("%d\n", ctest.get_wall_status_xyd(0, 0, 0));
+	ctest.disp();
+	XY start{ 0,0 };
+	XY goal{ 5,6 };
+	StepMap stest(start, goal);
+	stest.update_stepmap(ctest);
 }
