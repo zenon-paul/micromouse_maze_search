@@ -1,5 +1,5 @@
 #pragma once
-#include"container.h"
+/*#include"container.h"
 #define HIGHT 65
 #define WIDTH 65
 
@@ -23,4 +23,4 @@ public:
 	void init_for_extending_wall();
 	void make_maze_easier();
 	void extending_wall();
-};
+};*/

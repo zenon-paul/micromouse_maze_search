@@ -1,6 +1,6 @@
 /*#include"adati.h"
 #include"grid.h"
-#include"dijikstr.h"
+#include"stepmap.h"
 void Adati_constructor(Adati_* this_,Grid_* u) {
 	this_->user = u;
 	this_->goal_index = 0;

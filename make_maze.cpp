@@ -1,4 +1,4 @@
-#include<stdio.h>
+/*#include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
 #include<limits.h>
@@ -184,4 +184,4 @@ void Maze::extending_wall() {
 	free(list_even_num_ps);
 	free(list_even_num_ps_index);
 	make_maze_easier();
-}
+}*/

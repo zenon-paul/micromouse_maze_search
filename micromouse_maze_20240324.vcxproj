@@ -85,7 +85,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\sakur\source\repos\opengl_micromouse_maze_grid_2\json-develop\json-develop\single_include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -100,7 +100,7 @@
       <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\sakur\source\repos\opengl_micromouse_maze_grid_2\json-develop\json-develop\single_include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -115,7 +115,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\sakur\source\repos\opengl_micromouse_maze_grid_2\json-develop\json-develop\single_include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -130,7 +130,7 @@
       <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\sakur\source\repos\opengl_micromouse_maze_grid_2\json-develop\json-develop\single_include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -148,7 +148,7 @@
   <ItemGroup>
     <ClCompile Include="adati.cpp" />
     <ClCompile Include="dfs.cpp" />
-    <ClCompile Include="dijikstr.cpp" />
+    <ClCompile Include="stepmap.cpp" />
     <ClCompile Include="grid.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="make_maze.cpp" />
@@ -162,7 +162,7 @@
     <ClInclude Include="adati.h" />
     <ClInclude Include="container.h" />
     <ClInclude Include="dfs.h" />
-    <ClInclude Include="dijikstr.h" />
+    <ClInclude Include="stepmap.h" />
     <ClInclude Include="grid.h" />
     <ClInclude Include="make_maze.h" />
     <ClInclude Include="make_route.h" />
